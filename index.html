@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stopwatch.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain w-50 p-5 mx-auto mt-3 text-center">
+        <h1>STOP WATCH</h1>
+        <div class="mt-5">
+            <input type="number" placeholder="00" id="hours">
+            <input type="number" placeholder="00" id="minutes">
+            <input type="number" placeholder="00" id="seconds">
+        </div>
+
+        <div class="container2">
+                <div>
+                    <button class="btn m-2 w-50 bg-primary text-white" onclick= "startButton()">START</button>
+                    <button class="btn m-2 w-50 bg-danger text-white" onclick= "pauseButton()">PAUSE</button>
+                    <button class="btn m-2 w-50 bg-warning text-white" onclick= "resetButton()">RESET</button>
+
+                </div>
+        </div>
+    </div>
+    <script>
+        const startButton=()=>{
+            seconds.value++
+          myTimer = setTimeout(startButton, 1000)
+           if (seconds.value==59){
+            minutes.value++
+            seconds.value=0
+           }
+           else if (minutes.value==59){
+            hours.value++
+            minutes.value=0
+           }
+        }
+        const pauseButton=()=>{
+            clearInterval(myTimer)
+        }
+        const resetButton=()=>{
+            seconds.value=""
+            minutes.value=""
+            hours.value=""
+            startButton()
+        }
+    </script>
+</body>
+</html>
